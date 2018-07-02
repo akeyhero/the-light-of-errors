@@ -1,6 +1,10 @@
+require 'yaml'
+
 class GPIO
-  def initialize(pin)
-    @pin = pin
+  CONFIG = YAML.load_file 'pins.yml'
+
+  def initialize(pin_name)
+    @pin = CONFIG[pin_name.to_s]
     `gpio mode #{@pin} out`
   end
 

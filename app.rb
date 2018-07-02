@@ -1,8 +1,6 @@
 #!/usr/bin/env ruby
 # encoding: utf-8
 
-GPIO_PIN = 8
-
 $:.unshift File.dirname(__FILE__)
 
 require 'bundler'
@@ -14,7 +12,7 @@ end
 
 require 'lib/gpio'
 
-gpio = GPIO.new GPIO_PIN
+gpio = GPIO.new :default
 
 before do
   content_type 'application/json'
