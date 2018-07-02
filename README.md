@@ -2,14 +2,19 @@
 
 ## Usage
 
-### installation / start
+### installation
 
 ```bash
 $ bundle install
-$ bundle exec ruby app.rb
 ```
 
-### Check if working
+### start the app
+
+```bash
+$ ./app.rb -e production
+```
+
+### Check
 
 ```bash
 $ curl -XGET http://localhost:4567/
@@ -19,4 +24,10 @@ $ curl -XGET http://localhost:4567/
 
 ```bash
 $ curl -XPOST http://localhost:4567/ -d ''
+```
+
+### Turn off
+
+```bash
+$ curl -XDELETE http://localhost:4567/
 ```
