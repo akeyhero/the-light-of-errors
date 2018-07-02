@@ -42,5 +42,4 @@ delete '/' do
   gpio.off
 
   status 204
-  { status: 'No Content' }.to_json
 end
