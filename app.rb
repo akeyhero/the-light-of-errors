@@ -21,7 +21,7 @@ before do
 end
 
 get '/' do
-  { status: 'OK' }.to_json
+  { status: 'OK', value: gpio.read }.to_json
 end
 
 post '/' do

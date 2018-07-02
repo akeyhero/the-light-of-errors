@@ -11,4 +11,8 @@ class GPIO
   def off
     `gpio write #{@pin} 0`
   end
+
+  def read
+    `gpio read #{@pin}`.strip
+  end
 end
