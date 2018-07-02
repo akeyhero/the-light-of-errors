@@ -6,10 +6,12 @@ class GPIO
 
   def on
     `gpio write #{@pin} 1`
+    nil
   end
 
   def off
     `gpio write #{@pin} 0`
+    nil
   end
 
   def read
