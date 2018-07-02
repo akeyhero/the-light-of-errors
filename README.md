@@ -2,13 +2,24 @@
 
 ## Usage
 
-### installation
+### Setup
+
+This app requires *WiringPi* or one of alteratives since it calls the `gpio` shell command.
+
+Also, it depends on RubyGems managed by Bundler. Run:
 
 ```bash
 $ bundle install
 ```
 
-### start the app
+The pins which the app fires are configured with `pins.yml` .
+
+```bash
+$ cp pins.yml{.sample,}
+$ vim pins.yml
+```
+
+### Start the app
 
 ```bash
 $ ./app.rb -e production
