@@ -4,7 +4,7 @@
 
 ### Setup
 
-This app requires *WiringPi* or one of alteratives since it calls the `gpio` shell command.
+This app requires *WiringPi* or one of the alternatives so that it can use the `gpio` shell command.
 
 Also, it depends on RubyGems managed by Bundler. Run:
 
