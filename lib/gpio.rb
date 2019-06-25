@@ -5,20 +5,20 @@ class GPIO
 
   def initialize(pin_name)
     @pin = CONFIG[pin_name.to_s].to_i
-    `gpio mode #{@pin} out`
+    `gpio -g mode #{@pin} out`
   end
 
   def on
-    `gpio write #{@pin} 1`
+    `gpio -g write #{@pin} 1`
     nil
   end
 
   def off
-    `gpio write #{@pin} 0`
+    `gpio -g write #{@pin} 0`
     nil
   end
 
   def read
-    `gpio read #{@pin}`.strip
+    `gpio -g read #{@pin}`.strip
   end
 end
