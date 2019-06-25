@@ -42,3 +42,11 @@ $ curl -XPOST http://localhost:4567/ -d ''
 ```bash
 $ curl -XDELETE http://localhost:4567/
 ```
+
+## Circuit
+
+Here is an example:
+
+![Circuit](src/circuit-example.png)
+
+(Drawn with [Circuit Diagram](https://www.circuit-diagram.org))
