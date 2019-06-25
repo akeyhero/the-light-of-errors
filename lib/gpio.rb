@@ -8,17 +8,25 @@ class GPIO
     `gpio -g mode #{@pin} out`
   end
 
-  def on
+  def on!
     `gpio -g write #{@pin} 1`
     nil
   end
 
-  def off
+  def off!
     `gpio -g write #{@pin} 0`
     nil
   end
 
   def read
     `gpio -g read #{@pin}`.strip
+  end
+
+  def on?
+    ! off?
+  end
+
+  def off?
+    read == '0'
   end
 end

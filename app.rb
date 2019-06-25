@@ -10,23 +10,23 @@ configure :development do
   require 'sinatra/reloader'
 end
 
-require 'lib/gpio'
+require 'lib/light'
 
-gpio = GPIO.new :default
+light = Light.new :default
 
 before do
   content_type 'application/json'
 end
 
 get '/' do
-  { status: 'OK', value: gpio.read }.to_json
+  { status: 'OK', value: light.on? ? 'on' : 'off' }.to_json
 end
 
 post '/' do
   body = request.body.read
 
   if body == ''
-    gpio.on
+    light.on!
 
     status 201
     { status: 'Created' }.to_json
@@ -37,7 +37,7 @@ post '/' do
 end
 
 delete '/' do
-  gpio.off
+  light.off!
 
   status 204
 end
